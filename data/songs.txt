@@ -1,0 +1,59 @@
+1001|The Scientist|Coldplay|A Rush of Blood to the Stars|309
+1002|Viva La Vida|Coldplay|Viva la Vida or Death and All His Friends|241
+1003|Yellow|Coldplay|Parachutes|266
+1004|Clocks|Coldplay|A Rush of Blood to the Stars|307
+1005|Fix You|Coldplay|X&Y|295
+2001|Shape of You|Ed Sheeran|Divide|233
+2002|Perfect|Ed Sheeran|Divide|263
+2003|Castle on the Hill|Ed Sheeran|Divide|261
+2004|Photograph|Ed Sheeran|X|258
+2005|Thinking Out Loud|Ed Sheeran|X|281
+3001|Bohemian Rhapsody|Queen|A Night at the Opera|355
+3002|Don't Stop Me Now|Queen|Jazz|210
+3003|We Will Rock You|Queen|News of the World|122
+3004|We Are the Champions|Queen|News of the World|179
+3005|Another One Bites the Dust|Queen|The Game|216
+4001|Smells Like Teen Spirit|Nirvana|Nevermind|301
+4002|Come As You Are|Nirvana|Nevermind|219
+4003|Lithium|Nirvana|Nevermind|257
+4004|Heart-Shaped Box|Nirvana|In Utero|281
+4005|All Apologies|Nirvana|In Utero|231
+5001|Hotel California|Eagles|Hotel California|390
+5002|Take It Easy|Eagles|Eagles|208
+5003|Life in the Fast Lane|Eagles|Hotel California|286
+5004|Desperado|Eagles|Desperado|227
+5005|Peaceful Easy Feeling|Eagles|Eagles|257
+6001|Billie Jean|Michael Jackson|Thriller|294
+6002|Thriller|Michael Jackson|Thriller|357
+6003|Smooth Criminal|Michael Jackson|Bad|257
+6004|Man in the Mirror|Michael Jackson|Bad|319
+6005|Beat It|Michael Jackson|Thriller|258
+7001|Back to Black|Amy Winehouse|Back to Black|241
+7002|Rehab|Amy Winehouse|Back to Black|214
+7003|Valerie|Amy Winehouse|Back to Black|218
+7004|Love Is a Losing Game|Amy Winehouse|Back to Black|155
+7005|You Know I'm No Good|Amy Winehouse|Back to Black|257
+8001|Crazy Little Thing Called Love|Queen|The Game|165
+8002|The Show Must Go On|Queen|Innuendo|271
+8003|I Want to Break Free|Queen|The Works|260
+9001|Something Just Like This|The Chainsmokers|Memories...Do Not Open|247
+9002|Closer|The Chainsmokers|Collage|262
+9003|Paris|The Chainsmokers|Memories...Do Not Open|221
+1101|In My Place|Coldplay|A Rush of Blood to the Stars|228
+1102|Shiver|Coldplay|Parachutes|302
+2101|Give Me Love|Ed Sheeran|+|326
+2102|A Team|Ed Sheeran|+|260
+5101|New Kid in Town|Eagles|Hotel California|304
+5102|One of These Nights|Eagles|One of These Nights|252
+6101|Remember the Time|Michael Jackson|Dangerous|240
+7101|Tears Dry on Their Own|Amy Winehouse|Back to Black|240
+1|A Bad Day|Artist A|test|100
+2|Another Dawn|Artist B|test|100
+3|Beautiful Lie|Artist C|test|100
+4|Clear Skies|Artist D|test|100
+5|Drive Away|Artist E|test|100
+6|Echoes Night|Artist F|test|100
+7|Far From Here|Artist G|test|100
+8|Green Light|Artist H|test|100
+9|Hidden Track|Artist I|test|100
+10|Illusion|Artist J|test|100

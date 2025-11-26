@@ -1,0 +1,28 @@
+
+# 1. Cấu hình cơ bản
+cmake_minimum_required(VERSION 3.10)
+project(MusicPlayerProject LANGUAGES CXX)
+
+# 2. Thiết lập chuẩn C++
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 3. Tìm tất cả file .cpp trong src và include
+file(GLOB_RECURSE SRC_FILES
+    "${CMAKE_SOURCE_DIR}/src/*.cpp"
+    "${CMAKE_SOURCE_DIR}/main.cpp"
+)
+
+# 4. Tạo executable
+add_executable(${PROJECT_NAME} ${SRC_FILES})
+
+# 5. Thiết lập include directories
+target_include_directories(${PROJECT_NAME} PUBLIC
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src
+)
+
+# 6. Linker flags cho MinGW (console app)
+if(MINGW)
+    set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-mconsole")
+endif()

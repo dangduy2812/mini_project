@@ -1,0 +1,3 @@
+C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/build/CMakeFiles/MusicPlayerProject.dir
+C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/build/CMakeFiles/edit_cache.dir
+C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/build/CMakeFiles/rebuild_cache.dir
