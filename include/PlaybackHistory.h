@@ -3,23 +3,19 @@
 #include <stdexcept>
 #include "Song.h"
 
-// KHOI LICH SU
-
-// lớp lịch sử dùng stack để hỗ trợ quay lại theo nguyên tắc vào sau ra trước
 class PlaybackHistory {
 private:
-    std::stack<Song> st;
-
+    // P3.1: Sử dụng std::stack cho LIFO (Last-In, First-Out).
+    // Phù hợp hoàn hảo cho nút "Back" vì bài hát mới nhất (Last-In) sẽ được phát lại đầu tiên (First-Out).
+    // Các thao tác push/pop đều có độ phức tạp O(1).
+    std::stack<Song> historyStack;
+	std::stack<Song> forwardStack; // xử lý tình huống mất bài
 public:
-    // đẩy một bài vào lịch sử khi vừa phát xong
-    void pushSong(const Song& s);
+    // Thao tác chính: push (khi bài hát kết thúc) -> Độ phức tạp O(1)
+    void pushSong(const Song& song); 
+    // Thao tác chính: pop (khi nhấn nút Back) -> Độ phức tạp O(1)
+    Song playPreviousSong(); 
+    bool isEmpty() const { return historyStack.empty(); }
 
-    // lấy bài trước đó để phát lại, ném ngoại lệ nếu rỗng
-    Song playPreviousSong();
-
-    // kiểm tra rỗng
-    bool isEmpty() const { return st.empty(); }
-
-    // in danh sách lịch sử
     void displayHistory() const;
 };

@@ -1,65 +1,77 @@
 #pragma once
+
 #include "MusicLibrary.h"
 #include "PlaybackQueue.h"
 #include "PlaybackHistory.h"
 #include "ShuffleManager.h"
-#include "PlayNextQueue.h"
+namespace Controller
+{
+	enum PlaybackState
+	{
+		STOPPED = 0,
+		PLAYING = 1,
+		PAUSED = 2
+	};
 
-// KHOI TRINH PHAT
+	class MusicPlayer
+	{
+	private:
+		Model::MusicLibrary &library;
+		PlaybackQueue queue;
+		PlaybackHistory history;
+		ShuffleManager shuffleManager;
+		Song currentPlayingSong; // Bài hát đang phát (hoặc mới được chọn)
+		PlaybackState playbackState;
 
-// lớp điều khiển phát nhạc, quản lý trạng thái, lịch sử, queue, play next, shuffle
-namespace Controller {
+	public:
+		// P4.1: Phương thức chính để chọn và phát bài hát
+		void selectAndPlaySong(int songID);
 
-enum PlaybackState { STOPPED = 0, PLAYING = 1, PAUSED = 2 };
+		// P4.2: Thuật toán Smart Playlist (BFS)
+		PlaybackQueue generateSmartPlaylist(const Song &startSong, int maxSize);
 
-class MusicPlayer {
-private:
-    Model::MusicLibrary& library;
-    PlaybackQueue queue;
-    PlaybackHistory history;
-    ShuffleManager shuffleManager;
-    PlayNextQueue playNextQueue;
+		// Phương thức tiện ích
+		void displayCurrentQueue() const { queue.displayQueue(); }
 
-    Song current{0, "", "", "", 0};
-    PlaybackState state = STOPPED;
+		// Giả định một hàm để khởi tạo chế độ shuffle
+		void startShuffle(const std::vector<Song> &playlist);
 
-public:
-    // khởi tạo với tham chiếu thư viện nhạc
-    MusicPlayer(Model::MusicLibrary& lib) : library(lib) {}
+		MusicPlayer(Model::MusicLibrary &lib)
+			: library(lib),
+			  playbackState(STOPPED),
+			  currentPlayingSong({0, "", "", "", 0}) {}
 
-    // chọn và phát bài theo id, đồng thời thêm vào queue
-    void selectAndPlaySong(int songID);
+		// GETTER
 
-    // tạo danh sách thông minh bằng bfs theo nghệ sĩ
-    PlaybackQueue generateSmartPlaylist(const Song& startSong, int maxSize);
+		PlaybackHistory &getHistory()
+		{
+			return history;
+		}
 
-    // điều khiển phát tạm dừng
-    void togglePlayPause();
+		PlaybackQueue &getQueue()
+		{
+			return queue;
+		}
+		Song playNextShuffled();
 
-    // dừng phát
-    void stopPlayback();
+		Model::MusicLibrary &getLibrary() { return library; }
 
-    // phát bài trước đó theo lịch sử
-    void playPrevious();
+		// BỔ SUNG: Getter cho bài hát hiện tại
+		const Song &getCurrentTrack() const;
 
-    // phát bài kế tiếp ưu tiên play next queue trước
-    void playNext();
+		// BỔ SUNG: Setter cho bài hát hiện tại (được gọi bởi selectAndPlaySong hoặc playNext)
+		void setCurrentTrack(const Song &song);
+		// BỔ SUNG: Phương thức chuyển đổi trạng thái phát
+		void togglePlayPause();
+		void stopPlayback();
 
-    // khởi động chế độ shuffle trên một playlist
-    void startShuffle(const std::vector<Song>& playlist);
+		// Getter cho trạng thái
+		PlaybackState getState() const { return playbackState; }
 
-    // lấy bài shuffle kế tiếp
-    Song playNextShuffled();
+		void playPrevious();
 
-    // đánh dấu một id sẽ phát ngay khi bấm next
-    void markPlayNext(int songID);
+		void addAlbumToQueue(const std::string &albumName);
 
-    // các getter tiện ích
-    const Song& getCurrentTrack() const { return current; }
-    PlaybackState getState() const { return state; }
-    PlaybackQueue& getQueue() { return queue; }
-    PlaybackHistory& getHistory() { return history; }
-    Model::MusicLibrary& getLibrary() { return library; }
-};
-
-} // namespace Controller
+		void playNext();
+	};
+}

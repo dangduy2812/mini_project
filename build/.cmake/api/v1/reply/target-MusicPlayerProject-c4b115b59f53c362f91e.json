@@ -45,18 +45,18 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17"
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/include"
+					"path" : "C:/Users/AD/Documents/mini_project_new_final/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src"
+					"path" : "C:/Users/AD/Documents/mini_project_new_final/src"
 				}
 			],
 			"language" : "CXX",
@@ -86,10 +86,6 @@
 	{
 		"commandFragments" : 
 		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
 			{
 				"fragment" : "-mconsole",
 				"role" : "flags"

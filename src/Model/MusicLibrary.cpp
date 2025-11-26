@@ -1,49 +1,56 @@
-#include "MusicLibrary.h"
+#include "MusicLibrary.h" // Bao gồm chính header của nó
 #include <iostream>
 
-using namespace Model;
-
-// thêm bài hát vào vector chính
-void MusicLibrary::addSong(const Song& song) {
-    allSongs.push_back(song);
+void Model::MusicLibrary::addSong(const Song &song)
+{
+	allSongs.push_back(song);
 }
 
-// xây dựng lại toàn bộ chỉ mục dựa trên mảng allSongs
-void MusicLibrary::buildIndexes() {
-    songIndexByID.clear();
-    songIndexByTitle.clear();
-    artistIndex.clear();
-    albumIndex.clear();
+void Model::MusicLibrary::bulidIndexes()
+{
+	// Logic P2: Xây dựng các chỉ mục
+	songIndexByID.clear();
+	songIndexByTitle.clear();
+	artistIndex.clear();
+	albumIndex.clear();
 
-    // lặp một lần qua toàn bộ mảng để điền các chỉ mục
-    for (auto& s : allSongs) {
-        songIndexByID[s.id] = &s;
-        songIndexByTitle[s.title] = &s;
-        artistIndex[s.artist].push_back(&s);
-        albumIndex[s.album].push_back(&s);
-    }
+	// Lặp qua tất cả bài hát và thêm vào các map (chỉ mục)
+	for (auto &song : allSongs)
+	{
+		songIndexByID[song.id] = &song;
+		songIndexByTitle[song.title] = &song;
+		artistIndex[song.artist].push_back(&song);
+		albumIndex[song.album].push_back(&song);
+	}
 }
 
-// tra cứu theo id với độ phức tạp trung bình o mot
-Song* MusicLibrary::findSongByID(int id) {
-    auto it = songIndexByID.find(id);
-    return it == songIndexByID.end() ? nullptr : it->second;
+// Logic P2.1: O(1) trung bình
+Song *Model::MusicLibrary::findSongByID(int id)
+{
+	auto it = songIndexByID.find(id);
+	return (it != songIndexByID.end()) ? it->second : nullptr;
 }
 
-// tra cứu theo tiêu đề với o log n
-Song* MusicLibrary::findSongByTitle(const std::string& title) {
-    auto it = songIndexByTitle.find(title);
-    return it == songIndexByTitle.end() ? nullptr : it->second;
+// Logic P2.2: O(log n)
+Song *Model::MusicLibrary::findSongByTitle(const std::string &title)
+{
+	auto it = songIndexByTitle.find(title);
+	return (it != songIndexByTitle.end()) ? it->second : nullptr;
 }
 
-// lấy toàn bộ bài theo nghệ sĩ, tra bảng băm rồi trả về danh sách con trỏ
-std::vector<Song*> MusicLibrary::findSongsByArtist(const std::string& artistName) {
-    auto it = artistIndex.find(artistName);
-    return it == artistIndex.end() ? std::vector<Song*>{} : it->second;
+// Logic P2.3: O(1) trung bình
+std::vector<Song *> Model::MusicLibrary::findSongsByArtist(const std::string &artistName)
+{
+	auto it = artistIndex.find(artistName);
+	return (it != artistIndex.end()) ? it->second : std::vector<Song *>{};
 }
-
-// lấy toàn bộ bài theo album, dùng để add album vào queue và cho smart playlist
-std::vector<Song*> MusicLibrary::findSongsByAlbum(const std::string& albumName) {
-    auto it = albumIndex.find(albumName);
-    return it == albumIndex.end() ? std::vector<Song*>{} : it->second;
+int Model::MusicLibrary::getSize()
+{
+	return allSongs.size();
+}
+//  O(1) trung bình - Sử dụng albumIndex
+std::vector<Song *> Model::MusicLibrary::findSongsByAlbum(const std::string &albumName)
+{
+	auto it = albumIndex.find(albumName);
+	return (it != albumIndex.end()) ? it->second : std::vector<Song *>{};
 }

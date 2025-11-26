@@ -1,36 +1,48 @@
 #include "ShuffleManager.h"
+#include <ctime>
+#include <iostream>
 #include <chrono>
-#include <stdexcept>
 
-// khởi tạo danh sách xáo trộn và reset trạng thái
-void ShuffleManager::setupShuffle(const std::vector<Song>& playlist) {
-    shuffled = playlist;
-    played.clear();
-    idx = 0;
+void ShuffleManager::setupShuffle(const std::vector<Song> &playlist)
+{
+	originalPlaylist = playlist;
+	shuffledList = playlist;
+	playedSongIDs.clear();
+	currentShuffleIndex = 0;
 
-    // dùng seed theo thời gian để xáo ngẫu nhiên
-    unsigned seed = static_cast<unsigned>(
-        std::chrono::system_clock::now().time_since_epoch().count());
-    std::shuffle(shuffled.begin(), shuffled.end(), std::default_random_engine(seed));
+	// P3.3: Xáo trộn danh sách
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	std::shuffle(shuffledList.begin(), shuffledList.end(), std::default_random_engine(seed));
 }
 
-// lấy bài xáo trộn tiếp theo, đảm bảo không lặp trong cùng chu kỳ
-Song ShuffleManager::getNextShuffleSong() {
-    if (shuffled.empty())
-        throw std::out_of_range("danh sach shuffle rong");
+Song ShuffleManager::getNextShuffleSong()
+{
+	if (shuffledList.empty())
+	{
+		throw std::out_of_range("Shuffle playlist is empty.");
+	}
 
-    if (played.size() == shuffled.size()) {
-        played.clear();
-        idx = 0;
-    }
+	// P3.3: Kiểm tra và lặp lại chu kỳ nếu cần
+	if (playedSongIDs.size() == shuffledList.size())
+	{
+		playedSongIDs.clear();
+		currentShuffleIndex = 0; // Bắt đầu lại chu kỳ
+		std::cout << "[SHUFFLE]: Starting new shuffle cycle." << std::endl;
+	}
 
-    // bỏ qua các phần tử đã phát trong chu kỳ
-    while (played.count(shuffled[idx].id)) {
-        idx = (idx + 1) % shuffled.size();
-    }
+	// Tìm bài hát tiếp theo chưa được chơi
+	while (playedSongIDs.count(shuffledList[currentShuffleIndex].id))
+	{
+		currentShuffleIndex = (currentShuffleIndex + 1) % shuffledList.size();
+	}
 
-    Song next = shuffled[idx];
-    played.insert(next.id);
-    idx = (idx + 1) % shuffled.size();
-    return next;
+	Song nextSong = shuffledList[currentShuffleIndex];
+
+	// P3.3: Chèn ID vào set (O(log n)
+	playedSongIDs.insert(nextSong.id);
+
+	// Chuyển sang index tiếp theo cho lần gọi sau
+	currentShuffleIndex = (currentShuffleIndex + 1) % shuffledList.size();
+
+	return nextSong;
 }

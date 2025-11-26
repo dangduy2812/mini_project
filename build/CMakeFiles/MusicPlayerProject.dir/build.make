@@ -52,10 +52,10 @@ RM = C:\msys64\ucrt64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\AD\Documents\FPT\FPT\mini_project_new_final
+CMAKE_SOURCE_DIR = C:\Users\AD\Documents\mini_project_new_final
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build
+CMAKE_BINARY_DIR = C:\Users\AD\Documents\mini_project_new_final\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MusicPlayerProject.dir/depend.make
@@ -73,123 +73,123 @@ CMakeFiles/MusicPlayerProject.dir/codegen:
 
 CMakeFiles/MusicPlayerProject.dir/main.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/main.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/main.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/main.cpp
+CMakeFiles/MusicPlayerProject.dir/main.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/main.cpp
 CMakeFiles/MusicPlayerProject.dir/main.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MusicPlayerProject.dir/main.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/main.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\main.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\main.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MusicPlayerProject.dir/main.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/main.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\main.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\main.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\main.cpp
 
 CMakeFiles/MusicPlayerProject.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/main.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\main.cpp > CMakeFiles\MusicPlayerProject.dir\main.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\main.cpp > CMakeFiles\MusicPlayerProject.dir\main.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/main.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\main.cpp -o CMakeFiles\MusicPlayerProject.dir\main.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\main.cpp -o CMakeFiles\MusicPlayerProject.dir\main.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/Controller/AppController.cpp
+CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/Controller/AppController.cpp
 CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Controller\AppController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\Controller\AppController.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Controller\AppController.cpp > CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\Controller\AppController.cpp > CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/Controller/AppController.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Controller\AppController.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\Controller\AppController.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Controller\AppController.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/Controller/MusicPlayer.cpp
+CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/Controller/MusicPlayer.cpp
 CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Controller\MusicPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\Controller\MusicPlayer.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Controller\MusicPlayer.cpp > CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\Controller\MusicPlayer.cpp > CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/Controller/MusicPlayer.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Controller\MusicPlayer.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\Controller\MusicPlayer.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Controller\MusicPlayer.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/Model/MusicLibrary.cpp
+CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/Model/MusicLibrary.cpp
 CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\MusicLibrary.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\Model\MusicLibrary.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\MusicLibrary.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\Model\MusicLibrary.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/Model/MusicLibrary.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\MusicLibrary.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\Model\MusicLibrary.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\MusicLibrary.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/Model/PlaybackHistory.cpp
+CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/Model/PlaybackHistory.cpp
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\PlaybackHistory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\Model\PlaybackHistory.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\PlaybackHistory.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\Model\PlaybackHistory.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackHistory.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\PlaybackHistory.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\Model\PlaybackHistory.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackHistory.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/Model/PlaybackQueue.cpp
+CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/Model/PlaybackQueue.cpp
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\PlaybackQueue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\Model\PlaybackQueue.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\PlaybackQueue.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\Model\PlaybackQueue.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/Model/PlaybackQueue.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\PlaybackQueue.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\Model\PlaybackQueue.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\PlaybackQueue.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/Model/ShuffleManager.cpp
+CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/Model/ShuffleManager.cpp
 CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\ShuffleManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\Model\ShuffleManager.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\ShuffleManager.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\Model\ShuffleManager.cpp > CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/Model/ShuffleManager.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\Model\ShuffleManager.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\Model\ShuffleManager.cpp -o CMakeFiles\MusicPlayerProject.dir\src\Model\ShuffleManager.cpp.s
 
 CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj: CMakeFiles/MusicPlayerProject.dir/flags.make
 CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj: CMakeFiles/MusicPlayerProject.dir/includes_CXX.rsp
-CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj: C:/Users/AD/Documents/FPT/FPT/mini_project_new_final/src/View/MenuView.cpp
+CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj: C:/Users/AD/Documents/mini_project_new_final/src/View/MenuView.cpp
 CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj: CMakeFiles/MusicPlayerProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.obj -c C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\View\MenuView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.obj -MF CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.obj.d -o CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.obj -c C:\Users\AD\Documents\mini_project_new_final\src\View\MenuView.cpp
 
 CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\View\MenuView.cpp > CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\AD\Documents\mini_project_new_final\src\View\MenuView.cpp > CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.i
 
 CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MusicPlayerProject.dir/src/View/MenuView.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\src\View\MenuView.cpp -o CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\AD\Documents\mini_project_new_final\src\View\MenuView.cpp -o CMakeFiles\MusicPlayerProject.dir\src\View\MenuView.cpp.s
 
 # Object files for target MusicPlayerProject
 MusicPlayerProject_OBJECTS = \
@@ -217,7 +217,7 @@ MusicPlayerProject.exe: CMakeFiles/MusicPlayerProject.dir/build.make
 MusicPlayerProject.exe: CMakeFiles/MusicPlayerProject.dir/linkLibs.rsp
 MusicPlayerProject.exe: CMakeFiles/MusicPlayerProject.dir/objects1.rsp
 MusicPlayerProject.exe: CMakeFiles/MusicPlayerProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable MusicPlayerProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable MusicPlayerProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MusicPlayerProject.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -229,6 +229,6 @@ CMakeFiles/MusicPlayerProject.dir/clean:
 .PHONY : CMakeFiles/MusicPlayerProject.dir/clean
 
 CMakeFiles/MusicPlayerProject.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\AD\Documents\FPT\FPT\mini_project_new_final C:\Users\AD\Documents\FPT\FPT\mini_project_new_final C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build C:\Users\AD\Documents\FPT\FPT\mini_project_new_final\build\CMakeFiles\MusicPlayerProject.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\AD\Documents\mini_project_new_final C:\Users\AD\Documents\mini_project_new_final C:\Users\AD\Documents\mini_project_new_final\build C:\Users\AD\Documents\mini_project_new_final\build C:\Users\AD\Documents\mini_project_new_final\build\CMakeFiles\MusicPlayerProject.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/MusicPlayerProject.dir/depend
 

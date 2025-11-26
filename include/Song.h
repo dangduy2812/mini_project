@@ -6,5 +6,5 @@ struct Song {
     std::string title;
     std::string artist;
     std::string album;
-    int duration; // đơn vị giây
+    int duration;
 };

@@ -1,39 +1,79 @@
 #include <iostream>
-#include "AppController.h"
-#include "MusicLibrary.h"
-#include "MusicPlayer.h"
-#include "MenuView.h"
+#include <limits>
+#include "AppController.h" // Chứa loadLibraryFromSource
+#include "MusicLibrary.h"  // Model: Thư viện
+#include "MusicPlayer.h"   // Controller/Model: Trình phát nhạc
+#include "MenuView.h"	   // View: Giao diện người dùng
 
-// CHUONG TRINH CHINH
+using namespace std;
 
-int main() {
-    // nạp thư viện
-    Model::MusicLibrary library;
-    std::cout << "khoi dong engine nghe nhac\n";
-    loadLibraryFromSource(library, "songs.txt");
+// Tên file dữ liệu nhạc
+const std::string SONG_DATA_FILE = "songs.txt";
 
-    if (library.allSongs.empty()) {
-        std::cout << "khong co du lieu bai hat, thoat chuong trinh\n";
-        return 1;
-    }
+int main()
+{
+	// 1. Khởi tạo Thư viện (Model)
+	Model::MusicLibrary library;
 
-    // tạo trình phát
-    Controller::MusicPlayer player(library);
+	// 2. Tải dữ liệu và xây dựng chỉ mục (Controller Logic)
+	cout << "--- Khoi dong He thong Nghe nhac ---" << endl;
+	loadLibraryFromSource(library, SONG_DATA_FILE);
+	cout << "-------------------------------------" << endl;
 
-    int choice = -1;
-    while (choice != 0) {
-        View::MenuView::displayHeader(player);
-        std::cout << "da nap " << library.getSize() << " bai hat\n";
-        choice = View::MenuView::displayMainMenu();
+	if (library.allSongs.empty())
+	{
+		cerr << "FATAL ERROR: Khong tai duoc bai hat nao. Thoat ung dung." << endl;
+		return 1;
+	}
 
-        switch (choice) {
-        case 1: View::MenuView::handlePlaybackMenu(player); break;
-        case 2: View::MenuView::handleSearchMenu(library);  break;
-        case 3: View::MenuView::handleShuffleMenu(player);  break;
-        case 4: View::MenuView::handleSmartPlaylistMenu(player); break;
-        case 0: View::MenuView::displayMessage("thoat chuong trinh"); break;
-        default: View::MenuView::displayMessage("lua chon khong hop le"); break;
-        }
-    }
-    return 0;
+	// 3. Khởi tạo Trình phát (Controller/Model)
+	Controller::MusicPlayer player(library);
+
+	// Đặt bài hát mặc định (tùy chọn)
+	// player.selectAndPlaySong(1001);
+
+	int choice = -1;
+
+	// Vòng lặp Menu chính
+	while (choice != 0)
+	{
+
+		// Luôn hiển thị trạng thái hiện tại
+		View::MenuView::displayHeader(player);
+		std::cout << "Loaded " << library.getSize() << " songs." << std::endl;
+		choice = View::MenuView::displayMainMenu();
+
+		switch (choice)
+		{
+		case 1:
+			View::MenuView::handlePlaybackMenu(player);
+			break;
+		case 2:
+			View::MenuView::handleSearchMenu(library);
+			break;
+		case 3:
+			// Để test Shuffle, ta khởi tạo danh sách xáo trộn từ tất cả bài hát
+			// Chức năng này sẽ được gọi từ Menu/Controller, ta gọi thủ công ở đây cho chắc chắn
+			// player.startShuffle(library.allSongs);
+			View::MenuView::handleShuffleMenu(player);
+			break;
+		case 4:
+			View::MenuView::handleSmartPlaylistMenu(player);
+			break;
+		case 0:
+			View::MenuView::displayMessage("Da thoat ung dung. Tam biet!");
+			break;
+		default:
+			View::MenuView::displayMessage("Lua chon khong hop le.");
+			break;
+		}
+
+		// Ngăn không cho menu quay lại quá nhanh sau khi xử lý (tùy chọn)
+		if (choice != 0 && choice >= 1 && choice <= 4)
+		{
+			// system("pause"); // Đã có pause trong các hàm handle...
+		}
+	}
+
+	return 0;
 }

@@ -1,164 +1,207 @@
 #include "MenuView.h"
-#include "AppController.h"
+#include <limits>
+#include <sstream>
+#include <iomanip> 
 #include <string>
+#include <algorithm> 
+#include "MusicPlayer.h" // Đảm bảo đã include để sử dụng enum PlaybackState
 
-using namespace View;
+// --- HÀM CHÍNH: HIỂN THỊ TRẠNG THÁI (HEADER) ---
 
-// in trạng thái tiêu đề, không xóa màn hình theo yêu cầu
-void MenuView::displayHeader(const Controller::MusicPlayer& player) {
-    std::string status;
-    if (player.getState() == Controller::PLAYING) status = "dang phat";
-    else if (player.getState() == Controller::PAUSED) status = "tam dung";
-    else status = "dung";
 
-    std::cout << "\ntrang thai " << status << "\n";
-    const Song& cur = player.getCurrentTrack();
-    if (cur.id != 0) {
-        std::cout << "bai hien tai " << cur.title << " - " << cur.artist << " album " << cur.album << "\n";
-    } else {
-        std::cout << "chua chon bai hat\n";
+void View::MenuView::displayHeader(const Controller::MusicPlayer& player) {
+    system("cls"); 
+
+    std::string play_button;
+    std::string status_text;
+
+    // Sử dụng enum PlaybackState từ MusicPlayer.h
+    if (player.getState() == Controller::PLAYING) {
+        play_button = "||"; 
+        status_text = ">> PLAYING <<";
+    } else if (player.getState() == Controller::PAUSED) {
+        play_button = "|>"; 
+        status_text = "-- PAUSED --";
+    } else { // STOPPED
+        play_button = "[]"; 
+        status_text = ".. STOPPED ..";
     }
-    std::cout << "------------------------------\n";
+
+    std::cout << "\n=======================================================================" << std::endl;
+    std::cout << "  AUTOMOTIVE MUSIC PLAYER ENGINE CORE (MVC)   | Status: " << status_text << std::endl;
+    std::cout << "=======================================================================" << std::endl;
+    
+    const Song& current = player.getCurrentTrack();
+    
+    if (current.id != 0) {
+        std::cout << "| " << play_button
+                  << " | Current Track: " << current.title << " - " << current.artist 
+                  << " (Album: " << current.album << ")" << std::endl;
+    } else {
+        std::cout << "| " << play_button
+                  << " | Current Track: (No Song Selected)" << std::endl;
+    }
+    std::cout << "=======================================================================" << std::endl; 
+	
 }
 
-// hiển thị menu chính
-int MenuView::displayMainMenu() {
-    int c = -1;
-    std::cout << "\nchon chuc nang\n";
-    std::cout << "1 dieu khien phat nhac\n";
-    std::cout << "2 tim kiem chi muc\n";
-    std::cout << "3 che do shuffle\n";
-    std::cout << "4 smart playlist bfs\n";
-    std::cout << "0 thoat\n";
-    std::cout << "nhap lua chon ";
-    if (!(std::cin >> c)) { clearInputBuffer(); c = -1; }
-    return c;
+// --- HÀM CHÍNH: MENU CHÍNH ---
+
+int View::MenuView::displayMainMenu() {
+    int choice = -1;
+    std::cout << "\nSelect a feature block:" << std::endl;
+    std::cout << "1. Playback Controls (Play/Pause/Stop/Next/Prev)" << std::endl;
+    std::cout << "2. Part 2: Accelerate Searches (Index Testing)" << std::endl;
+    std::cout << "3. Part 3: Shuffle Manager (Set & Vector)" << std::endl;
+    std::cout << "4. Part 4: Generate Smart Playlist (BFS & Set)" << std::endl;
+    std::cout << "0. Exit" << std::endl;
+    std::cout << "Enter your choice: ";
+    
+    if (!(std::cin >> choice)) {
+        clearInputBuffer();
+        choice = -1;
+    }
+    return choice;
 }
 
-// menu điều khiển phát nhạc
-void MenuView::handlePlaybackMenu(Controller::MusicPlayer& player) {
-    int c = -1; clearInputBuffer();
-    while (c != 0) {
-        displayHeader(player);
-        std::cout << "\ndieu khien phat\n";
-        std::cout << "1 chuyen doi play pause\n";
-        std::cout << "2 dung phat\n";
-        std::cout << "3 chon va phat theo id\n";
-        std::cout << "4 phat bai tiep theo\n";
-        std::cout << "5 phat bai truoc do\n";
-        std::cout << "6 them album vao queue\n";
-        std::cout << "7 hien thi queue va lich su\n";
-        std::cout << "8 danh dau play next theo id\n";
-        std::cout << "0 quay lai\n";
-        std::cout << "nhap lua chon ";
-        if (!(std::cin >> c)) { clearInputBuffer(); c = -1; continue; }
+// --- HÀM XỬ LÝ: PLAYBACK (P1, P3.1, P4.1) ---
 
-        switch (c) {
-        case 1: player.togglePlayPause(); break;
-        case 2: player.stopPlayback(); break;
-        case 3: {
-            int id; std::cout << "nhap id ";
-            if (std::cin >> id) player.selectAndPlaySong(id);
-            else clearInputBuffer();
-            system("pause");
-            break;
-        }
-        case 4:
-            player.playNext();
-            system("pause");
-            break;
-        case 5:
-            player.playPrevious();
-            system("pause");
-            break;
-        case 6: {
-            std::string album;
-            std::cout << "nhap ten album ";
+void View::MenuView::handlePlaybackMenu(Controller::MusicPlayer& player) {
+    int sub_choice = -1;
+    clearInputBuffer(); 
+
+    while (sub_choice != 0) {
+        displayHeader(player); 
+        
+        std::cout << "\n--- PLAYBACK & HISTORY MENU (Part 1 & 4) ---" << std::endl;
+        std::cout << "1. Toggle Play/Pause (| > / || )" << std::endl;
+        std::cout << "2. Stop Playback" << std::endl;
+        std::cout << "3. Select and Play Song by ID (P4.1)" << std::endl;
+        std::cout << "4. Play Next Song (Queue) (P1.2)" << std::endl;
+        std::cout << "5. Play Previous Song (History) (P3.1)" << std::endl;
+        std::cout << "6. Add Album to Queue (P1.3)" << std::endl;
+        std::cout << "7. Display Queue & History" << std::endl;
+        std::cout << "0. Back to Main Menu" << std::endl;
+        std::cout << "Enter choice: ";
+       
+        if (!(std::cin >> sub_choice)) {
             clearInputBuffer();
-            std::getline(std::cin, album);
-            addAlbumToQueue(album, player.getLibrary(), player.getQueue());
-            system("pause");
-            break;
+            sub_choice = -1;
+            continue;
         }
-        case 7:
-            player.getQueue().displayQueue();
-            player.getHistory().displayHistory();
-            system("pause");
-            break;
-        case 8: {
-            int id; std::cout << "nhap id de play next ";
-            if (std::cin >> id) player.markPlayNext(id);
-            else clearInputBuffer();
-            system("pause");
-            break;
-        }
-        case 0: break;
-        default: displayMessage("lua chon khong hop le");
+
+        switch (sub_choice) {
+            case 1: player.togglePlayPause(); break;
+            case 2: player.stopPlayback(); break;
+            case 3: {
+                int id;
+                std::cout << "Enter Song ID to play: ";
+                if (std::cin >> id) {
+                    player.selectAndPlaySong(id); 
+                } else { clearInputBuffer(); }
+                system("pause"); break;
+            }
+            case 4: player.playNext(); system("pause"); break; 
+            case 5: player.playPrevious(); system("pause"); break; 
+            case 6: {
+                std::string album_name;
+                std::cout << "Enter Album Name: ";
+                clearInputBuffer();
+                std::getline(std::cin, album_name);
+                player.addAlbumToQueue(album_name); // Gọi phương thức lớp MusicPlayer đã cập nhật
+                system("pause"); break;
+            }
+            case 7: {
+                player.getQueue().displayQueue();
+                player.getHistory().displayHistory(); 
+                system("pause"); break;
+            }
+            case 0: break;
+            default: displayMessage("Lua chon khong hop le."); system("pause");
         }
     }
 }
 
-// menu tìm kiếm các chỉ mục
-void MenuView::handleSearchMenu(Model::MusicLibrary& library) {
-    clearInputBuffer();
-    std::string s;
-
-    std::cout << "\nmenu tim kiem\n";
-
-    std::cout << "nhap id ";
-    std::getline(std::cin, s);
+// --- HÀM XỬ LÝ: TÌM KIẾM (P2) ---
+// (Giữ nguyên)
+void View::MenuView::handleSearchMenu(Model::MusicLibrary& library) {
+    std::string temp_input;
+    clearInputBuffer(); 
+    
+    std::cout << "\n--- Search Menu (Testing Indexes - P2) ---" << std::endl;
+    
+    // --- 1. Tìm kiếm theo ID (std::unordered_map - O(1)) ---
+    std::cout << "1. Find by ID (e.g., 2001): ";
+    std::getline(std::cin, temp_input);
     try {
-        int id = std::stoi(s);
-        Song* p = library.findSongByID(id);
-        std::cout << "ket qua " << (p ? p->title + " - " + p->artist : std::string("khong tim thay")) << "\n";
+        int id = std::stoi(temp_input);
+        Song* song = library.findSongByID(id);
+        std::cout << "   -> Result (O(1)): " << (song ? song->title + " - " + song->artist : "Not Found") << std::endl;
     } catch (...) {
-        std::cout << "id khong hop le\n";
+        std::cout << "   -> ID khong hop le." << std::endl;
     }
 
-    std::cout << "nhap tieu de ";
-    std::getline(std::cin, s);
-    if (auto* p = library.findSongByTitle(s))
-        std::cout << "ket qua " << p->title << " by " << p->artist << "\n";
-    else
-        std::cout << "khong tim thay\n";
+    // --- 2. Tìm kiếm theo Tiêu đề (std::map - O(log n)) ---
+    std::cout << "2. Find by Title (e.g., Yellow): ";
+    std::getline(std::cin, temp_input);
+    Song* song = library.findSongByTitle(temp_input);
+    std::cout << "   -> Result (O(log n)): " << (song ? song->title + " by " + song->artist : "Not Found") << std::endl;
 
-    std::cout << "nhap ten nghe si ";
-    std::getline(std::cin, s);
-    auto vec = library.findSongsByArtist(s);
-    if (vec.empty()) {
-        std::cout << "khong co bai nao\n";
-    } else {
-        int i = 1;
-        for (auto* x : vec) {
-            std::cout << i++ << ". " << x->id << " " << x->title << " " << x->album << "\n";
+    // --- 3. Tìm kiếm theo Nghệ sĩ (std::unordered_map<string, vector<Song*>> - O(1) tra cứu) ---
+    std::cout << "3. Find all by Artist (e.g., Coldplay): ";
+    std::getline(std::cin, temp_input);
+    std::vector<Song*> artistSongs = library.findSongsByArtist(temp_input);
+    
+    if (!artistSongs.empty()) {
+        std::cout << "   -> Result (O(1) tra cuu): Found " << artistSongs.size() << " songs." << std::endl;
+        std::cout << "   --- Tracklist ---" << std::endl;
+        int index = 1;
+        for (const Song* s : artistSongs) {
+            std::cout << "   " << index++ << ". [" << s->id << "] " << s->title << " (" << s->album << ")" << std::endl;
         }
+        std::cout << "   -------------------" << std::endl;
+    } else {
+        std::cout << "   -> Result: Artist Not Found or no songs available." << std::endl;
     }
     system("pause");
 }
 
-// menu smart playlist bfs
-void MenuView::handleSmartPlaylistMenu(Controller::MusicPlayer& player) {
-    int c = -1;
-    while (c != 0) {
+// --- HÀM XỬ LÝ: SMART PLAYLIST (P4.2 - BFS) ---
+// (Giữ nguyên)
+void View::MenuView::handleSmartPlaylistMenu(Controller::MusicPlayer& player) {
+    int sub_choice = -1;
+    
+    while (sub_choice != 0) {
         displayHeader(player);
-        std::cout << "\nsmart playlist bfs\n";
-        std::cout << "1 tao danh sach\n";
-        std::cout << "0 quay lai\n";
-        std::cout << "nhap lua chon ";
-        if (!(std::cin >> c)) { clearInputBuffer(); c = -1; continue; }
+        std::cout << "\n--- Generate Smart Playlist (BFS) ---" << std::endl;
+        std::cout << "1. Generate Playlist" << std::endl;
+        std::cout << "0. Back to Main Menu" << std::endl;
+        std::cout << "Enter choice: ";
+        
+        if (!(std::cin >> sub_choice)) {
+            clearInputBuffer();
+            sub_choice = -1;
+            continue;
+        }
 
-        if (c == 1) {
-            int startID; int maxSize = 5;
-            std::cout << "nhap id bat dau ";
+        if (sub_choice == 1) {
+            int startID;
+            int maxSize = 5;
+            std::cout << "Enter Start Song ID (e.g., 1001): ";
             if (std::cin >> startID) {
                 clearInputBuffer();
-                std::cout << "nhap kich thuoc toi da ";
+                std::cout << "Enter Max Size (e.g., 5): ";
                 if (std::cin >> maxSize) {
-                    if (auto* start = player.getLibrary().findSongByID(startID)) {
-                        auto smartQ = player.generateSmartPlaylist(*start, maxSize);
-                        smartQ.displayQueue();
-                    } else {
-                        displayMessage("khong tim thay id");
+                    try {
+                        Song* startSongPtr = player.getLibrary().findSongByID(startID);
+                        if (startSongPtr) {
+                            PlaybackQueue smartQueue = player.generateSmartPlaylist(*startSongPtr, maxSize);
+                            smartQueue.displayQueue();
+                        } else {
+                             displayMessage("ID khong tim thay.");
+                        }
+                    } catch (const std::exception& e) {
+                        displayMessage(std::string("Loi: ") + e.what());
                     }
                 }
             } else {
@@ -169,36 +212,43 @@ void MenuView::handleSmartPlaylistMenu(Controller::MusicPlayer& player) {
     }
 }
 
-// menu xáo trộn
-void MenuView::handleShuffleMenu(Controller::MusicPlayer& player) {
-    int c = -1;
-    while (c != 0) {
+// --- HÀM XỬ LÝ: SHUFFLE (P3.3) ---
+// (Giữ nguyên)
+void View::MenuView::handleShuffleMenu(Controller::MusicPlayer& player) {
+    int sub_choice = -1;
+    
+    while (sub_choice != 0) {
         displayHeader(player);
-        std::cout << "\nche do shuffle\n";
-        std::cout << "1 bat shuffle tu toan bo thu vien\n";
-        std::cout << "2 lay bai shuffle ke tiep\n";
-        std::cout << "0 quay lai\n";
-        std::cout << "nhap lua chon ";
-        if (!(std::cin >> c)) { clearInputBuffer(); c = -1; continue; }
+        std::cout << "\n--- Shuffle Manager (P3.3) ---" << std::endl;
+        std::cout << "1. Activate Shuffle Mode (from all songs)" << std::endl;
+        std::cout << "2. Get Next Shuffled Song" << std::endl;
+        std::cout << "0. Back to Main Menu" << std::endl;
+        std::cout << "Enter choice: ";
+        
+        if (!(std::cin >> sub_choice)) {
+            clearInputBuffer();
+            sub_choice = -1;
+            continue;
+        }
 
-        switch (c) {
-        case 1:
-            player.startShuffle(player.getLibrary().allSongs);
-            system("pause");
-            break;
-        case 2:
-            try {
-                {
-                    Song s = player.playNextShuffled();
-                    displayMessage(std::string("shuffle ") + s.title + " by " + s.artist);
-                }
-            } catch (const std::out_of_range& e) {
-                displayMessage(e.what());
+        switch (sub_choice) {
+            case 1: {
+                player.startShuffle(player.getLibrary().allSongs); 
+                system("pause");
+                break;
             }
-            system("pause");
-            break;
-        case 0: break;
-        default: displayMessage("lua chon khong hop le");
+            case 2: {
+                try {
+                    Song nextShuffle = player.playNextShuffled();
+                    displayMessage("Next Shuffle: " + nextShuffle.title + " by " + nextShuffle.artist);
+                } catch (const std::out_of_range& e) {
+                    displayMessage(e.what());
+                }
+                system("pause");
+                break;
+            }
+            case 0: break;
+            default: displayMessage("Lua chon khong hop le."); system("pause");
         }
     }
 }

@@ -1,31 +1,43 @@
 #include "PlaybackHistory.h"
 #include <iostream>
-
-// thêm bài vào stack lịch sử
-void PlaybackHistory::pushSong(const Song& s) {
-    st.push(s);
+// P3.1: Lý do Stack là tối ưu: O(1) cho push/pop
+void PlaybackHistory::pushSong(const Song &song)
+{
+	historyStack.push(song); // O(1)
 }
 
-// lấy bài trước đó, ném ngoại lệ nếu rỗng
-Song PlaybackHistory::playPreviousSong() {
-    if (st.empty()) throw std::out_of_range("lich su dang rong");
-    Song prev = st.top();
-    st.pop();
-    return prev;
-}
+Song PlaybackHistory::playPreviousSong()
+{
+	if (historyStack.empty())
+	{
+		throw std::out_of_range("Playback history is empty.");
+	}
 
-// in lịch sử theo thứ tự từ mới đến cũ
-void PlaybackHistory::displayHistory() const {
-    std::cout << "\nlich su phat\n";
-    if (st.empty()) {
-        std::cout << "khong co lich su\n";
-        return;
-    }
-    auto temp = st;
-    int i = static_cast<int>(temp.size());
-    while (!temp.empty()) {
-        const Song& s = temp.top();
-        std::cout << i-- << ". " << s.id << " " << s.title << " " << s.artist << "\n";
-        temp.pop();
-    }
+	Song previousSong = historyStack.top(); // O(1)
+	
+	historyStack.pop();						// O(1)
+
+	return previousSong;
+}
+void PlaybackHistory::displayHistory() const
+{
+	std::cout << "\n--- Playback History (Back Stack, LIFO) ---" << std::endl;
+	if (historyStack.empty())
+	{
+		std::cout << "History is currently empty." << std::endl;
+		return;
+	}
+
+	// Sao chép stack để duyệt
+	std::stack<Song> tempStack = historyStack;
+	int index = tempStack.size();
+
+	// Duyệt từ trên xuống (Mới nhất -> Cũ nhất)
+	while (!tempStack.empty())
+	{
+		const Song &song = tempStack.top();
+		std::cout << index-- << ". ID: " << song.id << ", Title: " << song.title << " (" << song.artist << ")" << std::endl;
+		tempStack.pop();
+	}
+	std::cout << "------------------------------------------" << std::endl;
 }

@@ -3,42 +3,40 @@
 #include <unordered_map>
 #include <map>
 #include <string>
-#include "Song.h"
+#include "Song.h" 
+namespace Model
+{
+	class MusicLibrary
+	{
+	public:
+		// P1: Thư viện chính dùng std::vector (truy cập nhanh, ít thay đổi)
+		std::vector<Song> allSongs;
 
-namespace Model {
+		// P2.1: Chỉ mục theo ID dùng std::unordered_map (O(1) trung bình)
+		std::unordered_map<int, Song *> songIndexByID;
 
-// KHOI THU VIEN VA CHI MUC
+		// P2.2: Chỉ mục theo Tiêu đề dùng std::map (O(log n), duy trì sắp xếp)
+		std::map<std::string, Song *> songIndexByTitle;
 
-// lớp quản lý thư viện nhạc và các chỉ mục tra cứu
-class MusicLibrary {
-public:
-    // vector chứa toàn bộ bài hát, phù hợp truy cập tuần tự và ngẫu nhiên nhanh
-    std::vector<Song> allSongs;
+		// P2.3: Chỉ mục theo Nghệ sĩ dùng std::unordered_map<string, vector<Song*>> (O(1) trung bình)
+		std::unordered_map<std::string, std::vector<Song *>> artistIndex;
 
-    // tra cứu theo id trung bình o mot
-    std::unordered_map<int, Song*> songIndexByID;
+		// Bổ sung: Chỉ mục Album (Cần cho Smart Playlist BFS)
+		std::unordered_map<std::string, std::vector<Song *>> albumIndex;
 
-    // tra cứu theo tiêu đề o log n và luôn có thứ tự chữ cái
-    std::map<std::string, Song*> songIndexByTitle;
+		// Phương thức thêm bài hát
+		void addSong(const Song &song);
 
-    // tra cứu nghệ sĩ và album theo dạng một nghệ sĩ nhiều bài
-    std::unordered_map<std::string, std::vector<Song*>> artistIndex;
-    std::unordered_map<std::string, std::vector<Song*>> albumIndex;
+		// Phương thức xây dựng tất cả các chỉ mục
+		void bulidIndexes();
 
-    // thêm một bài hát vào mảng gốc
-    void addSong(const Song& song);
+		int getSize();
+		// P2: Các phương thức tìm kiếm
 
-    // xây dựng lại toàn bộ chỉ mục sau khi đã nạp xong dữ liệu
-    void buildIndexes();
+		Song *findSongByID(int id);
+		Song *findSongByTitle(const std::string &title);
 
-    // trả về kích thước thư viện
-    int getSize() const { return static_cast<int>(allSongs.size()); }
-
-    // các hàm tra cứu
-    Song* findSongByID(int id);
-    Song* findSongByTitle(const std::string& title);
-    std::vector<Song*> findSongsByArtist(const std::string& artistName);
-    std::vector<Song*> findSongsByAlbum(const std::string& albumName);
-};
-
-} // namespace Model
+		std::vector<Song *> findSongsByArtist(const std::string &artistName);
+		std::vector<Song *> findSongsByAlbum(const std::string &albumName);
+	};
+}
